@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <!-- <style>
+        body{
+            font-family: 'Inter', sans-serif;
+        }
+        .vid{
+            position: absolute;
+            z-index: -1;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+        .header{
+            color: white;
+            display: flex;
+            position: fixed;
+            width: 100vw;
+            top: 0;
+            left: 0;
+            padding: 15px;
+            font-size: 1rem;
+        }
+        .header-item{
+            margin-right: 25px;
+            margin-top: auto;
+            margin-bottom: auto;
+            
+        }
+        .header-item a{
+            color: white;
+            text-decoration: none;
+        }
+        .header-item a:hover{
+            color: white;
+            text-decoration:underline;
+            text-decoration-style: solid;
+        }
+        #login-area{
+            display: flex;
+            margin-left: auto;
+            margin-right: 25px;
+        }
+        #search{
+            transition: width 0.5s cubic-bezier(.31,.17,.19,1);
+            margin-right: 25px;
+            padding: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            width: 25px;
+    background-color: rgba(255, 255, 255, 0.75  );
+            color: black;
+            display: flex;
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+        }
+        #search:hover{
+            width: 15vw;
+        }
+        #search:hover #s-txt{
+            display: block;
+        }
+        #logo{
+            margin-left: 25px;
+        }
+        #icon{
+            margin-left: auto;
+            
+        }
+        #s-txt{
+            margin-top: auto;
+            margin-bottom: auto;
+            background: none;
+            border: none;
+            width: 100%;
+            height: 100%;
+            font-size: 20px;
+            outline: none;
+            display: none;
+        }
+        
+    </style> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+    <div class="searchdialog" id="se">
+        <div class="searchbar">
+
+                <input id="s-txt-visible" class="visible" placeholder="Bắt đầu gõ để tìm kiếm. VD: Lập trình python." >
+        </div>
+        <button class="closebtn material-symbols-outlined" onclick="makeinvis()">close</button>
+        <div></div>
+    </div>
+    <div class="header">
+        <div id="logo" class="header-item"><b>Logo</b></div>
+        <div id="entry" class="header-item"><a href="#">Trang chủ</a></div>
+        <div id="entry" class="header-item"><a href="#">Blog</a></div>
+        <div id="entry" class="header-item"><a href="#">Giá cả</a></div>
+        <div id="login-area" class="header-item">
+            <div id="search" class="header-item" onclick="makevisible()">
+                <input id="s-txt">
+                <span class="material-symbols-outlined" id="icon">search</span>
+            </div>
+            <div id="login" class="header-item lo" onclick="makevisible()">Đăng nhập</div>
+            <div id="register" class="header-item lo">Đăng ký</div>
+
+        </div>
+    </div>
+    <video 
+    loop="loop" 
+    autoplay="autoplay" 
+    playsinline
+    muted="muted" 
+    class="vid"
+    src="https://chriscourses.com/_nuxt/videos/galaxy.b6c8fb5.mp4" 
+    >
+    This browser doesnt support video playback
+ </video>
+ <h1 class="ad">Học lập trình từ cơ bản đến nâng cao.</h1>
+ <div class="start">
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button class="btn" >
+        <div id="btntext">BẮT ĐẦU</div>
+        <div class="material-symbols-outlined" id="btnicon">chevron_right</div></button></a>
+ </div>
+
+</body>
+<script>
+    function redirect(){
+        window.location.href = "http://www.w3schools.com";
+    }
+    function makevisible(){
+        console.log("Bruh");
+        var box = document.getElementById("se");
+        console.log(box.classList);
+        box.classList.add("visible")
+
+    }
+    function makeinvis(){
+        var box = document.getElementById("se");
+        box.classList.add("novis")
+        setTimeout(() => {
+            box.classList.remove("visible")
+            box.classList.remove("novis")
+        }, 500)
+        //box.classList.remove("visible")
+    }
+</script>
+
+</html>
